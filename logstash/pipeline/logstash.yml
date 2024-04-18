@@ -1,7 +1,12 @@
+#input {
+#  file {
+#   path => "/var/log/nginx/access.log"
+#   start_position => "beginning"
+#  }
+#}
 input {
-  file {
-   path => "/var/log/nginx/access.log"
-   start_position => "beginning"
+  beats {
+    port => 5044
   }
 }
 

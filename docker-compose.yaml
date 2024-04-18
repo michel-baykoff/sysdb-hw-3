@@ -52,9 +52,10 @@ services:
 #      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
 #      - ./logstash/pipelines:/usr/share/logstash/pipelines:ro
-      - ./nginx/log/access.log:/var/log/nginx/access.log:ro
+#      - ./nginx/log/access.log:/var/log/nginx/access.log:ro
     ports:
       - "5000:5000"
+      - "5044:5044"
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
@@ -63,11 +64,14 @@ services:
       - elasticsearch
 
 
-#  filebeat:
-#    image: elastic/filebeat:7.17.9
-#    command: --strict.perms=false
-#    user: root
-#    volumes:
+  filebeat:
+    container_name: filebeat
+    image: elastic/filebeat:7.17.9
+    command: --strict.perms=false
+    user: root
+    volumes:
+      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ./nginx/log/access.log:/var/log/nginx/access.log
 #      - /projects/test/filebeat.yml:/usr/share/filebeat/filebeat.yml
 #      - /var/lib/docker:/var/lib/docker:ro
 #      - /var/run/docker.sock:/var/run/docker.sock
