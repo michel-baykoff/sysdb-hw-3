@@ -7,7 +7,7 @@
 *Приведите скриншот команды 'curl -X GET 'localhost:9200/_cluster/health?pretty', сделанной на сервере с установленным Elasticsearch. Где будет виден нестандартный cluster_name*.
 
 ### Решение 1
-![elastic](img/01.png)`
+![elastic](img/01.png)
 
 
 ---
@@ -19,7 +19,7 @@
 *Приведите скриншот интерфейса Kibana на странице http://<ip вашего сервера>:5601/app/dev_tools#/console, где будет выполнен запрос GET /_cluster/health?pretty*.
 
 ### Решение 2
-![Kibana](img/01.png)`
+![Kibana](img/02.png)
 
 
 ---
@@ -31,7 +31,9 @@
 *Приведите скриншот интерфейса Kibana, на котором видны логи Nginx.*
 
 ### Решение 3
-![KibanaNginx](img/01.png)`
+![KibanaNginx](img/03.png)
+![KibanaNginx](img/04.png)
+![KibanaNginx](img/05.png)
 
 
 ---
@@ -43,4 +45,5 @@
 *Приведите скриншот интерфейса Kibana, на котором видны логи Nginx, которые были отправлены через Filebeat.*
 
 ### Решение 4
-![Filebeat](img/01.png)`
+![Filebeat](img/06.png)
+![Filebeat](img/07.png)
